@@ -60,8 +60,19 @@ The steps to load a `.csv` file like ours into an SQLite database are as follows
 
 Once this is done, you can easily query the database inside of Python, and SQLAlchemy will convert these relational database rows back into objects for manipulation. SQLAlchemy tracks any subsequent changes to these objects during a session, and reflects changes to the database upon committing.
 
-This approach is outlined in detail in `database_engineering.ipynb`.
+This approach is outlined in detail in `database_engineering.ipynb`, and results in the file `hawaii.sqlite`.
 
 ## Climate Analysis
 
-Now that the data 
+Now that the data is stored in a way that it can be easily and quickly accessed, we want to explore the data further, and prototype the functions and queries that will end up in the Flask app. Doing some basic climate analysis on the dataset will help us understand how to structure the final API, and give us insight into how the user might interact with the application.
+
+In order to interact with the database in Python, we will reflect the database schema back into Python classes using SQLAlchemy. Once the data is accessible in this way, we will plot:
+
+- A bar graph of the last 12 months of aggregated precipitation data.
+- A histogram of temperature distribution over the last 12 months
+- A single-bar graph with the average temperature for a selected date range.
+- An area plot of daily normal temperatures for a selected date range.
+
+The process is outlined in detail in `climate_analysis.ipynb`.
+
+## Climate App
